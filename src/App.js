@@ -18,6 +18,7 @@ function App() {
         <div style={styles.cake_usd}>
           <img
             src="https://findicons.com/files/icons/2010/free_food/128/cake.png"
+            alt="cake"
             style={{ height: 25, width: 25 }}
           />
           <p style={styles.cake}>Cake</p>
