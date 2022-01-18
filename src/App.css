@@ -1,38 +1,46 @@
 .App {
-  text-align: center;
+  border: 3px solid #ccc;
+  border-radius: 20px;
+
+  width: 700px;
+  margin: 20px;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 41px;
+  background-color: #888;
+  border-radius: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* After slide changes */
+.toggle:after {
+  content: "";
+  position: absolute;
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  background-color: white;
+  top: 0.5px;
+  left: 1px;
+  bottom: 0.5px;
+  transition: all 0.5s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Checkbox checked effect */
+.checkbox:checked + .toggle::after {
+  left: 49px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Checkbox checked toggle label bg color */
+.checkbox:checked + .toggle {
+  background-color: #ffc40c;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Checkbox vanished */
+.checkbox {
+  display: none;
 }
